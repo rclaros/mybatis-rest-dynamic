@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace must indicate mapper interface full package path -->
+<mapper namespace="org.sotech.portal.mapper.DataMapper">
+    <resultMap id="resulToMap" type="java.util.HashMap">
+    </resultMap>
+    <select id="getData" statementType="CALLABLE" parameterType="Parametro" resultMap="resulToMap" >
+        { call PKG_DATOS.USP_DATOS (
+            #{param.ubigeo, mode=IN,jdbcType=VARCHAR,javaType=String},
+            #{param.marco, mode=IN,jdbcType=VARCHAR,javaType=String},
+            #{param.periodo, mode=IN,jdbcType=INTEGER,javaType=Integer},
+            #{param.pnum, mode=IN,jdbcType=INTEGER,javaType=Integer},
+            #{param.psize, mode=IN,jdbcType=INTEGER,javaType=Integer},
+            #{param.queryId, mode=IN,jdbcType=VARCHAR,javaType=String},
+            #{param.items,mode=OUT,jdbcType=CURSOR,resultMap=resulToMap,javaType=java.sql.ResultSet},
+            #{param.size,mode=OUT,jdbcType=INTEGER,javaType=Integer}
+        )
+        }
+    </select>
+</mapper>
