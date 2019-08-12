@@ -21,7 +21,7 @@ Para solucionar este problema solo hacemos uso de un Map para utilizarlo como re
   ```
 > Utilización de procedimiento almacenado que se encarga de ejecutar en función al codigo de QueryId, utilizando Switch y otra técnica
 
-> Se puede ejecutar llamar uno o varias consultas en una misma petición
+> Se puede invocar uno o varias consultas en una misma petición
  ```
  ?querys=Query1,Query2,Queryn
   ```
